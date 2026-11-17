@@ -16,8 +16,8 @@ classDiagram
         +setName(String) void
         +getBasePrice() double
         +setBasePrice(double) void
-        +calculatePrice()* double
-        +getSummary()* String
+        +calculatePrice() double
+        +getSummary() String
     }
 
     class Ingredient {
@@ -53,24 +53,24 @@ classDiagram
         <<abstract>>
         -String orderId
         +getOrderId() String
-        +calculateTotal()* double
-        +generateReceipt()* String
+        +calculateTotal() double
+        +generateReceipt() String
     }
 
     class Sandwich {
-        -ArrayList~Ingredient~ ingredients
+        -ArrayList ingredients
         +addIngredient(Ingredient) void
         +removeIngredient(Ingredient) void
-        +getIngredients() ArrayList~Ingredient~
+        +getIngredients() ArrayList
         +calculateTotal() double
         +generateReceipt() String
     }
 
     class StoreData {
-        -ObservableList~Ingredient~ inventoryList$
-        -ArrayList~Sandwich~ orderHistory$
-        +getInventoryList()$ ObservableList~Ingredient~
-        +getOrderHistory()$ ArrayList~Sandwich~
+        -ObservableList inventoryList
+        -ArrayList orderHistory
+        +getInventoryList() ObservableList
+        +getOrderHistory() ArrayList
     }
 
     MenuItem <|-- Ingredient : extends
@@ -78,7 +78,7 @@ classDiagram
     Ingredient <|-- VeggieIngredient : extends
     Ingredient <|-- SauceCheeseIngredient : extends
     AbstractOrder <|-- Sandwich : extends
-    Sandwich o-- Ingredient : contains
+    Sandwich --> Ingredient : contains
     StoreData --> Ingredient : manages
     StoreData --> Sandwich : stores
 ```
