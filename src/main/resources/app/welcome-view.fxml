@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="15.0" styleClass="root-wallpaper" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.WelcomeController">
+   <children>
+      <Label styleClass="title-banner" stylesheets="@style.css" text="Sandwich Java Edition" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font></Label>
+      <Button mnemonicParsing="false" onAction="#handleCreateSandwich" styleClass="sandwich-btn" text="Create Sandwich" />
+      <Button mnemonicParsing="false" onAction="#handleManageIngredients" styleClass="sandwich-btn" text="Manage Ingredients" />
+      <Button mnemonicParsing="false" onAction="#handleExit" styleClass="sandwich-btn" text="Exit" />
+   </children>
+</VBox>

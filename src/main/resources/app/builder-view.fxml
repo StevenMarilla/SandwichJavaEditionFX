@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" styleClass="root-wallpaper" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.BuilderController">
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblSummary" styleClass="title-banner" stylesheets="@style.css" text="0 ingredients selected">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="lblGrandTotal" styleClass="title-banner" stylesheets="@style.css" text="Total: PHP 0.00">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button mnemonicParsing="false" onAction="#handleCancel" styleClass="sandwich-btn" text="Cancel" />
+            <Button mnemonicParsing="false" onAction="#handleConfirm" styleClass="sandwich-btn" text="Confirm Order" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER_LEFT">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label styleClass="title-banner" stylesheets="@style.css" text="Build Your Sandwich">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <FlowPane fx:id="paneIngredients" hgap="12.0" prefHeight="200.0" prefWidth="200.0" vgap="12.0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="sandwich-stage">
+               <children>
+                  <VBox fx:id="boxSandwichStack" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="imgTopBread" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/top%20bun.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="imgBottomBread" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/bottom%20bun.png" />
+                           </image></ImageView>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </StackPane>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>
