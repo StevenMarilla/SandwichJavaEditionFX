@@ -5,6 +5,11 @@ import java.util.ArrayList;
 public class Sandwich extends AbstractOrder {
     private ArrayList<Ingredient> ingredients;
 
+    public Sandwich() {
+        super("ORD-" + (StoreData.getOrderHistory().size() + 1001));
+        this.ingredients = new ArrayList<>();
+    }
+
     public Sandwich(String orderId) {
         super(orderId);
         this.ingredients = new ArrayList<>();
