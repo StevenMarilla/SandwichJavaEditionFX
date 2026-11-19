@@ -132,8 +132,8 @@ SandwichJavaEditionFX/
 
 | Member | Main Tasks | Classes / Files Worked On | Approx. % of Work |
 | :--- | :--- | :--- | :--- |
-| **Ray Steven Marilla** | Project setup, Maven/JavaFX config, Scene Builder UI, CSS styling, UML & Repo docs | `welcome-view.fxml`, `builder-view.fxml`, `inventory-view.fxml`, `style.css`, `module-info.java`, `pom.xml` | 25% |
-| **Frances Ann Marie Dela Peña** | OOP Model hierarchy, JavaFX properties, shared data store | `MenuItem.java`, `Ingredient.java`, `ProteinIngredient.java`, `VeggieIngredient.java`, `SauceCheeseIngredient.java`, `AbstractOrder.java`, `Sandwich.java`, `StoreData.java` | 25% |
+| **Ray Steven Marilla** | Project setup, Maven/JavaFX config, Scene Builder UI, CSS styling, UML & Repo docs | `welcome-view.fxml`, `builder-view.fxml`, `inventory-view.fxml`, `style.css`, `module-info.java`, `pom.xml`, `AbstractOrder.java`, `MenuItem.java`, `Sandwich.java`, `StoreData.java` | 25% |
+| **Frances Ann Marie Dela Peña** | OOP Model hierarchy, JavaFX properties, shared data store | `Ingredient.java`, `ProteinIngredient.java`, `VeggieIngredient.java`, `SauceCheeseIngredient.java` | 25% |
 | **Neela Isabelle Hormillosa** | Application entry point, scene switching, dynamic sandwich builder logic | `Main.java`, `WelcomeController.java`, `BuilderController.java` | 25% |
 | **Danielle Marie Uytiepo** | Inventory CRUD operations, TableView binding, input validation & alerts | `InventoryController.java` | 25% |
 
