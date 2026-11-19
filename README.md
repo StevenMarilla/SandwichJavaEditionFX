@@ -142,18 +142,32 @@ SandwichJavaEditionFX/
 ## 5. Individual Reflections
 
 ### Ray Steven Marilla
-- **OOP Pillar Worked On Most:** Abstraction & Separation of Concerns (separating FXML views and CSS from controller/model logic).
-- **Challenge & Solution:** Configuring JavaFX modules and custom CSS styling in Scene Builder; resolved by properly exposing packages in `module-info.java` and using relative resource paths in `style.css`.
-- **What I Would Do Differently Next Time:** Finalize the UML inheritance diagram before starting UI and controller coding so all class contracts are locked in from day one.
+1. **Which OOP pillar did you work on most, and where is it in the code?**
+- Abstraction & Separation of Concerns (separating FXML views and CSS from controller/model logic).
+2. **What was the challenging problem you faced, and how did you solve it?**
+- Configuring JavaFX modules and custom CSS styling in Scene Builder; resolved by properly exposing packages in `module-info.java` and using relative resource paths in `style.css`.
+3. **What is one thing you would do differently next time?**
+- Finalize the UML inheritance diagram before starting UI and controller coding so all class contracts are locked in from day one.
 
 ### Frances Ann Marie Dela Peña
-- *(Fill in half-page reflection answering the 3 prompts from Section 7.2)*
+1. **Which OOP pillar did you work on most, and where is it in the code?**
+- I mostly worked on Inheritance and Polymorphism, particularly in the Ingredient class and its subclasses, where methods are inherited and overridden. 
+2. **What was the challenging problem you faced, and how did you solve it?**
+- One challenge I faced was understanding how to properly implement method overriding while giving each ingredient category its own behavior. I solved this by overriding the abstract methods in each subclass and making sure they returned the correct values based on their respective categories.
+3. **What is one thing you would do differently next time?**
+- Next time, I would plan and organize my classes more carefully before coding to make sure the inheritance structure and methods are properly implemented. This would help me avoid confusion and make the code easier to maintain.
 
 ### Neela Isabelle Hormillosa
 - *(Fill in half-page reflection answering the 3 prompts from Section 7.2)*
 
 ### Danielle Marie Uytiepo
-- *(Fill in half-page reflection answering the 3 prompts from Section 7.2)*
+1. **Which OOP pillar did you work on most, and where is it in the code?**
+- The OOP pillar I worked on the most was Encapsulation. This can be seen throughout the InventoryController. The different attributes of Ingredient were made private, and getter and setter methods were used frequently to access and modify them instead of directly accessing the attributes.
+2. **What was the challenging problem you faced, and how did you solve it?**
+- In order for our system to work the way we envisioned, I had to learn and use several methods and functions that I had not encountered before. It was challenging to understand how they worked and how to properly implement them. However, with the knowledge I gained from previous projects, the help of Google and AI, and numerous discussions with my groupmates, I was able to overcome these challenges and finish my assigned part.
+3. **What is one thing you would do differently next time?**
+- If I had known what we would be presenting and when the presentation would take place sooner, I think I could have prepared better and gained a deeper understanding of our system. I would have also had more time to review my work and become more confident in explaining it.
+
 
 ---
 
@@ -173,4 +187,4 @@ SandwichJavaEditionFX/
 | **Nov 5** | Searched for references and inspirations for our program idea. |
 | **Nov 10** | Division of roles and discussion of work plan |
 | **Nov 12** | Work in progess |
-| **Day 17** | Finalizing documentations and checking the program |
+| **Noc 17** | Finalizing documentations and checking the program |
