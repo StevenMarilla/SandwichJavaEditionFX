@@ -187,4 +187,5 @@ SandwichJavaEditionFX/
 | **Nov 5** | Searched for references and inspirations for our program idea. |
 | **Nov 10** | Division of roles and discussion of work plan |
 | **Nov 12** | Work in progess |
-| **Noc 17** | Finalizing documentations and checking the program |
+| **Nov 17** | Finalizing documentations and checking the program |
+| **Nov 19** | Finishing the documentation and checking the program |
