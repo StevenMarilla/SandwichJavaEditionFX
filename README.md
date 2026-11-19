@@ -143,11 +143,11 @@ SandwichJavaEditionFX/
 
 ### Ray Steven Marilla
 1. **Which OOP pillar did you work on most, and where is it in the code?**
-- Abstraction & Separation of Concerns (separating FXML views and CSS from controller/model logic).
+- I'd say abstraction and inheritance. I designed the core abstract base classes (MenuItem.java, Ingredient.java, and AbstractOrder.java) and stepped in to help implement the concrete inheritance hierarchy (Sandwich.java and the Ingredient subclasses in model/) alongside separating the FXML views and CSS styling from the controller logic.
 2. **What was the challenging problem you faced, and how did you solve it?**
-- Configuring JavaFX modules and custom CSS styling in Scene Builder; resolved by properly exposing packages in `module-info.java` and using relative resource paths in `style.css`.
+- Integrating the UI controllers with the upgraded 3-level inheritance model—while managing JavaFX module permissions (module-info.java) and Git ownership restrictions across lab workstations—caused compilation mismatches. I resolved this by aligning method signatures (calculatePrice(), generateReceipt()), properly opening packages in module-info.java, and coordinating repository merges across the team.
 3. **What is one thing you would do differently next time?**
-- Finalize the UML inheritance diagram before starting UI and controller coding so all class contracts are locked in from day one.
+- Finalize the UML inheritance diagram and exact method signatures before dividing tasks so that all team members' models and controllers integrate cleanly from day one without mid-project refactoring.
 
 ### Frances Ann Marie Dela Peña
 1. **Which OOP pillar did you work on most, and where is it in the code?**
