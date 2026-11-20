@@ -45,7 +45,7 @@
          <items>
             <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
                <content>
-                  <FlowPane fx:id="paneIngredients" hgap="12.0" prefHeight="200.0" prefWidth="200.0" vgap="12.0">
+                  <FlowPane fx:id="paneIngredients" hgap="12.0" prefWrapLength="420.0" vgap="12.0">
                      <padding>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
@@ -54,18 +54,24 @@
             </ScrollPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="sandwich-stage">
                <children>
-                  <VBox fx:id="boxSandwichStack" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <ImageView fx:id="imgTopBread" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/top%20bun.png" />
-                           </image></ImageView>
-                        <ImageView fx:id="imgBottomBread" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/bottom%20bun.png" />
-                           </image></ImageView>
-                     </children>
-                  </VBox>
+                  <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
+                     <content>
+                        <VBox fx:id="boxSandwichStack" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="imgTopBread" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/top_bun.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="imgBottomBread" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/bottom_bun.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
                </children>
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

@@ -30,10 +30,11 @@
             <TextField fx:id="txtName" promptText="Ingredient Name" />
             <TextField fx:id="txtStock" promptText="Stock" />
             <TextField fx:id="txtPrice" promptText="Price" />
+            <ComboBox fx:id="cmbIngredientType" prefWidth="150.0" />
          </children></HBox>
       <HBox alignment="CENTER" prefWidth="200.0" spacing="8.0">
          <children>
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddIngredients" styleClass="sandwich-btn" text="Add Ingredients">
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddIngredient" styleClass="sandwich-btn" text="Add Ingredients">
                <font>
                   <Font size="10.0" />
                </font></Button>

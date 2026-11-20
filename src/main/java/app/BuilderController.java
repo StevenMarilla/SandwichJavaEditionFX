@@ -42,7 +42,7 @@ public class BuilderController {
 
     @FXML
     public void initialize() {
-        boxSandwichStack.setSpacing(-15);
+        boxSandwichStack.setSpacing(-45);
 
         for (Ingredient item : StoreData.getInventoryList()) {
             ToggleButton toggleBtn = new ToggleButton(
@@ -59,7 +59,7 @@ public class BuilderController {
 
                     Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(item.getImagePath())));
                     ImageView layerView = new ImageView(image);
-                    layerView.setFitWidth(200);
+                    layerView.setFitWidth(160);
                     layerView.setPreserveRatio(true);
 
                     layerMap.put(item, layerView);
@@ -96,19 +96,69 @@ public class BuilderController {
 
     @FXML
     private void handleConfirm(ActionEvent event) {
+        if (currentSandwich.getIngredients().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Empty Sandwich");
+            alert.setHeaderText("No Ingredients Selected");
+            alert.setContentText("Please select at least one ingredient before confirming your order.");
+            alert.showAndWait();
+            return;
+        }
+
+        double total = currentSandwich.calculateTotal();
+
+        // Prompt for payment
+        javafx.scene.control.TextInputDialog payDialog = new javafx.scene.control.TextInputDialog();
+        payDialog.setTitle("Payment");
+        payDialog.setHeaderText(String.format("Total Amount Due: PHP %.2f", total));
+        payDialog.setContentText("Enter cash tendered (PHP):");
+
+        java.util.Optional<String> result = payDialog.showAndWait();
+        if (result.isEmpty()) {
+            return; // User clicked Cancel on payment prompt
+        }
+
+        double amountPaid;
+        try {
+            amountPaid = Double.parseDouble(result.get().trim());
+        } catch (NumberFormatException e) {
+            Alert err = new Alert(Alert.AlertType.ERROR, "Please enter a valid numeric payment amount.");
+            err.showAndWait();
+            return;
+        }
+
+        if (amountPaid < total) {
+            Alert err = new Alert(Alert.AlertType.WARNING,
+                    String.format("Insufficient payment. You still need PHP %.2f.", total - amountPaid));
+            err.showAndWait();
+            return;
+        }
+
+        double change = amountPaid - total;
+
+        // Deduct stock & record order only after valid payment
         for (Ingredient item : currentSandwich.getIngredients()) {
             item.deductStock(1);
         }
-
         StoreData.addOrder(currentSandwich);
+
+        // Display receipt with payment & change
+        String fullReceipt = currentSandwich.generateReceipt()
+                + String.format("\nCash Tendered: PHP %.2f\nChange: PHP %.2f", amountPaid, change);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Order Confirmed");
         alert.setHeaderText("Sandwich Order Summary");
-        alert.setContentText(currentSandwich.generateReceipt());
+
+        javafx.scene.control.TextArea receiptArea = new javafx.scene.control.TextArea(fullReceipt);
+        receiptArea.setEditable(false);
+        receiptArea.setWrapText(true);
+        receiptArea.setPrefWidth(420);
+        receiptArea.setPrefHeight(240);
+
+        alert.getDialogPane().setContent(receiptArea);
         alert.showAndWait();
 
         Main.switchScene(event, "/app/welcome-view.fxml");
     }
 }
-
